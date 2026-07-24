@@ -115,10 +115,12 @@ const focusQuoteForm = () => {
             </div>
 
             <div
-                class="pointer-events-none mt-7 flex items-center justify-center gap-8 text-white lg:absolute lg:bottom-[21.5rem] lg:left-[24%] lg:z-20 lg:mt-0 lg:flex-col lg:gap-[2.9375rem]"
+                class="pointer-events-none mx-auto mt-7 grid w-36 grid-cols-2 grid-rows-2 gap-y-3 text-white lg:absolute lg:bottom-[21.5rem] lg:left-[24%] lg:z-20 lg:mx-0 lg:mt-0 lg:w-auto lg:grid-cols-1 lg:grid-rows-2 lg:gap-[2.9375rem]"
                 aria-hidden="true"
             >
-                <span class="p-1.5">
+                <span
+                    class="col-start-2 row-start-1 justify-self-end p-1.5 lg:col-start-1 lg:justify-self-center"
+                >
                     <svg
                         viewBox="0 0 88 48"
                         fill="none"
@@ -134,7 +136,9 @@ const focusQuoteForm = () => {
                         />
                     </svg>
                 </span>
-                <span class="p-1.5 lg:-translate-x-16">
+                <span
+                    class="col-start-1 row-start-2 justify-self-start p-1.5 lg:col-start-1 lg:-translate-x-16 lg:justify-self-center"
+                >
                     <svg
                         viewBox="0 0 88 48"
                         fill="none"
@@ -180,11 +184,7 @@ const focusQuoteForm = () => {
             rgb(229 180 79 / 9%),
             transparent 74%
         ),
-        linear-gradient(
-            0deg,
-            rgb(211 155 57 / 4%) 0%,
-            transparent 82%
-        );
+        linear-gradient(0deg, rgb(211 155 57 / 4%) 0%, transparent 82%);
 }
 
 .hero-truck-stage::after {
@@ -207,11 +207,7 @@ const focusQuoteForm = () => {
             rgb(229 180 79 / 14%),
             transparent 72%
         ),
-        linear-gradient(
-            90deg,
-            rgb(214 160 61 / 6%) 0%,
-            transparent 80%
-        );
+        linear-gradient(90deg, rgb(214 160 61 / 6%) 0%, transparent 80%);
 }
 
 @media (min-width: 1024px) {
@@ -237,5 +233,4 @@ const focusQuoteForm = () => {
             transparent 100%
         );
 }
-
 </style>

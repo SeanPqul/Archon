@@ -10,7 +10,7 @@ import { articles } from '@/data/homepage';
         <img
             src="/assets/images/bg-article.png"
             alt=""
-            class="absolute inset-0 -z-10 size-full object-cover opacity-35"
+            class="absolute inset-0 -z-10 size-full object-cover opacity-150"
             loading="lazy"
             decoding="async"
         />
