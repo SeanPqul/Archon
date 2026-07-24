@@ -1,0 +1,206 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme inline {
+    --font-sans:
+        Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-archon: #151616;
+    --color-brand-red: #9d0211;
+    --color-gold: #cb9f53;
+    --color-gray-black: #272727;
+    --color-reddish: #d95b40;
+    --color-dim-blue: #293378;
+}
+
+@layer base {
+    :root {
+        color-scheme: dark;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        background: #151616;
+    }
+
+    /*
+     * The supplied desktop composition is 1920px wide. Keep its proportions
+     * on smaller desktop viewports instead of retaining 1920-scale spacing
+     * and type at laptop widths.
+     */
+    @media (min-width: 1024px) and (max-width: 1535.98px) {
+        html {
+            font-size: clamp(12.8px, calc(22.4px - 0.625vw), 16px);
+        }
+    }
+
+    @media (min-width: 1536px) {
+        html {
+            font-size: clamp(12.8px, 0.833333vw, 16px);
+        }
+    }
+
+    body {
+        margin: 0;
+        background: #151616;
+        color: #ffffff;
+        font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+        text-rendering: optimizeLegibility;
+    }
+
+    @media (min-width: 1024px) {
+        body {
+            font-size: max(1rem, 14px);
+        }
+    }
+
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        font: inherit;
+    }
+
+    ::selection {
+        background: #cb9f53;
+        color: #151616;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+        }
+    }
+}
+
+@layer components {
+    .site-shell {
+        width: min(calc(100% - 2rem), 101.25rem);
+        margin-inline: auto;
+    }
+
+    .eyebrow {
+        color: #cb9f53;
+        font-size: max(1rem, 13px);
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    .form-field {
+        position: relative;
+        display: block;
+        padding-top: 0.45rem;
+    }
+
+    .form-field > span {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 1rem;
+        padding-inline: 0.5rem;
+        background: #f7f7f7;
+        color: #777777;
+        font-size: max(0.7rem, 11px);
+        line-height: 1;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        width: 100%;
+        border: 1px solid #a8a8a8;
+        border-radius: 0.65rem;
+        background: #f7f7f7;
+        color: #282828;
+        outline: none;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+    }
+
+    .form-field input,
+    .form-field select {
+        min-height: 5rem;
+        padding: 1.2rem 1.25rem;
+    }
+
+    .form-field textarea {
+        min-height: 13rem;
+        resize: vertical;
+        padding: 1.35rem 1.25rem;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+        border-color: #9d0211;
+        box-shadow: 0 0 0 3px rgb(157 2 17 / 14%);
+    }
+
+    .form-field input[aria-invalid='true'],
+    .form-field select[aria-invalid='true'],
+    .form-field textarea[aria-invalid='true'] {
+        border-color: #9d0211;
+    }
+
+    .form-field small {
+        display: block;
+        margin-top: 0.45rem;
+        color: #9d0211;
+        font-size: max(0.75rem, 12px);
+    }
+
+    .newsletter-form {
+        container-type: inline-size;
+    }
+
+    .newsletter-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    @container (min-width: 32rem) {
+        .newsletter-fields {
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        .newsletter-fields button {
+            min-width: 9rem;
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    .site-shell {
+        width: min(calc(100% - 3rem), 101.25rem);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1535.98px) {
+    .site-shell {
+        width: min(
+            calc(100% - clamp(48px, calc(10.625vw - 60.8px), 102.4px)),
+            101.25rem
+        );
+    }
+}
+
+@media (min-width: 1536px) {
+    .site-shell {
+        width: min(calc(100% - 8rem), 101.25rem);
+    }
+}
