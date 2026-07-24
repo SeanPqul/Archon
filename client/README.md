@@ -1,10 +1,10 @@
-# Archon Homepage
+# Archon Website
 
-Responsive single-page Archon implementation for the R Web Solutions frontend
-assessment. It uses Laravel, Inertia, Vue, TypeScript, and Tailwind CSS, with
-server-backed quotation and newsletter forms.
+The Archon website presents its heavy-duty trucks, services, company details,
+and contact options. It is built with Laravel, Inertia, Vue, TypeScript, and
+Tailwind CSS.
 
-## Local setup
+## Run locally
 
 ```powershell
 composer install
@@ -15,7 +15,15 @@ php artisan migrate
 composer run dev
 ```
 
-## Quality checks
+Open `http://127.0.0.1:8000` after the development server starts.
+
+## Build for production
+
+```powershell
+pnpm build
+```
+
+## Optional quality checks
 
 ```powershell
 php artisan test
@@ -26,6 +34,3 @@ pnpm build
 vendor\bin\pint --test
 vendor\bin\phpstan analyse --memory-limit=512M
 ```
-
-The visual source of truth is `../Draft Homepage.png`; the implementation uses
-the supplied assets from `../Resources`.
