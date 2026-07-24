@@ -374,6 +374,17 @@ const selectServiceFromPointer = (event: PointerEvent) => {
     line-height: 1.65;
 }
 
+@media (max-width: 1023px) {
+    .services-content {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .services-image,
+    .services-accordion {
+        min-width: 0;
+    }
+}
+
 @media (min-width: 1024px) {
     .services-section {
         padding-block: 8.5rem 10.5rem;
@@ -440,7 +451,7 @@ const selectServiceFromPointer = (event: PointerEvent) => {
     }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1024px) and (max-width: 1200px) {
     .services-content {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         column-gap: 3.5rem;
