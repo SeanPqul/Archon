@@ -46,4 +46,4 @@ RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framewor
 
 EXPOSE 10000
 
-CMD ["sh", "-c", "php artisan migrate --force && php -S 0.0.0.0:${PORT:-10000} -t public public/index.php"]
+CMD ["sh", "-c", "php artisan migrate --force && cd public && php -S 0.0.0.0:${PORT:-10000} ../vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php"]
